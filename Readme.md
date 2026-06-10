@@ -1,4 +1,4 @@
-# Asynchronous FIFO Design and UVM Verification Environment
+# Asynchronous FIFO UVM Verification
 ---
 
 # Project Overview
