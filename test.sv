@@ -177,8 +177,7 @@ class test extends uvm_test;
 
         phase.raise_objection(this);
 
-        `uvm_info(get_type_name(),
-            "STARTING FIFO TEST",UVM_LOW);
+        `uvm_info(get_type_name(), "STARTING FIFO TEST",UVM_LOW);
 
         //////////////////////////////////////////////////////
         // RESET VERIFICATION
@@ -218,8 +217,7 @@ class test extends uvm_test;
         // End Test
         //----------------------------------------------------
 
-        `uvm_info(get_type_name(),
-            "FIFO TEST COMPLETED",UVM_LOW);
+        `uvm_info(get_type_name(), "FIFO TEST COMPLETED",UVM_LOW);
 
         phase.drop_objection(this);
 
