@@ -73,12 +73,11 @@ class monitor extends uvm_monitor;
         // Obtain Virtual Interface
         //----------------------------------------------------
 
-        if(!uvm_config_db #(virtual fifo_if)::get(
-            this,"", "my_vif", moni_intf ))
+        if(!uvm_config_db #(virtual fifo_if)::
+           get( this,"", "my_vif", moni_intf ))
           
         begin
-            `uvm_fatal(get_type_name(),
-                "Failed to get virtual interface"  )
+            `uvm_fatal(get_type_name(), "Failed to get virtual interface"  )
 
         end
 
@@ -120,7 +119,7 @@ class monitor extends uvm_monitor;
                 // Create Transaction
                 //------------------------------------------------
 
-                t_wr =sequence_item::type_id::create("t_wr");
+                t_wr = sequence_item::type_id::create("t_wr");
 
                 //------------------------------------------------
                 // Default Read-Domain Fields
