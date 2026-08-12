@@ -74,20 +74,19 @@ class agent extends uvm_agent;
         // Create Monitor
         //----------------------------------------------------
 
-        mon_h =monitor::type_id::create("mon_h",this);
+        mon_h = monitor::type_id::create("mon_h",this);
 
         //----------------------------------------------------
         // Create Driver
         //----------------------------------------------------
 
-        drv_h =driver::type_id::create("drv_h",this);
+        drv_h = driver::type_id::create("drv_h",this);
 
         //----------------------------------------------------
         // Create Sequencer
         //----------------------------------------------------
 
-        seqr_h =
-        sequencer::type_id::create("seqr_h",this);
+        seqr_h = sequencer::type_id::create("seqr_h",this);
 
     endfunction
 
