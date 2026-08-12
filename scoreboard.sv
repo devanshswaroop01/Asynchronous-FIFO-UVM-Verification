@@ -153,8 +153,7 @@ class scoreboard extends uvm_scoreboard;
 
                 reset_active = 1'b1;
 
-              `uvm_info( get_type_name(),
-                    "RESET DETECTED -> REFERENCE QUEUE CLEARED", UVM_LOW  );
+             `uvm_info( get_type_name(), "RESET DETECTED -> REFERENCE QUEUE CLEARED", UVM_LOW  );
 
             end
 
@@ -195,8 +194,7 @@ class scoreboard extends uvm_scoreboard;
 
             total_writes++;
 
-            `uvm_info( get_type_name(),
-                      $sformatf( "WRITE SUCCESS : DATA = 0x%0h", t.i_w_data_tb),UVM_HIGH);
+         `uvm_info( get_type_name(), $sformatf( "WRITE SUCCESS : DATA = 0x%0h", t.i_w_data_tb),UVM_HIGH);
 
         end
 
@@ -223,8 +221,7 @@ class scoreboard extends uvm_scoreboard;
 
                 fail_count++;
 
-                `uvm_warning(  get_type_name(),
-                           "READ OCCURRED BEFORE REFERENCE QUEUE UPDATED");
+             `uvm_warning(  get_type_name(), "READ OCCURRED BEFORE REFERENCE QUEUE UPDATED");
 
             end
 
@@ -246,8 +243,7 @@ class scoreboard extends uvm_scoreboard;
 
                     pass_count++;
 
-                    `uvm_info( get_type_name(),
-                        $sformatf(  "READ MATCH : EXPECTED = 0x%0h | ACTUAL = 0x%0h",
+                 `uvm_info( get_type_name(), $sformatf(  "READ MATCH : EXPECTED = 0x%0h | ACTUAL = 0x%0h",
                          expected_data, t.o_r_data_tb),UVM_MEDIUM);
 
                 end
@@ -257,8 +253,7 @@ class scoreboard extends uvm_scoreboard;
 
                     fail_count++;
 
-                  `uvm_error( get_type_name(),
-                        $sformatf("READ MISMATCH : EXPECTED = 0x%0h | ACTUAL = 0x%0h",
+                 `uvm_error( get_type_name(), $sformatf("READ MISMATCH : EXPECTED = 0x%0h | ACTUAL = 0x%0h",
                             expected_data, t.o_r_data_tb));
 
                 end
