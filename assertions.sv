@@ -161,8 +161,7 @@ module fifo_assertions #(
 
     endproperty
 
-    a_gray_write_pointer :
-    assert property(p_gray_write_pointer)
+    a_gray_write_pointer : assert property(p_gray_write_pointer)
     else
     $error("WRITE GRAY POINTER ERROR");
 
@@ -296,8 +295,7 @@ module fifo_assertions #(
 
     endproperty
 
-    a_no_read_when_empty :
-    assert property(p_no_read_when_empty)
+    a_no_read_when_empty : assert property(p_no_read_when_empty)
     else
     $error("READ OCCURRED WHILE FIFO EMPTY");
 
