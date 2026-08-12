@@ -1,4 +1,4 @@
-
+ 
 //-------------------------------------------------------------------------------------
 // Description:  Reference model and checking component for the Async FIFO.
 //
@@ -278,8 +278,18 @@ class scoreboard extends uvm_scoreboard;
     function void report_phase(uvm_phase phase);
 
         super.report_phase(phase);
+ 
+        `uvm_info( get_type_name(), "==============================================",UVM_NONE);
 
-        // Existing report code unchanged
+        `uvm_info( get_type_name(), $sformatf("TOTAL WRITES : %0d",total_writes),UVM_NON);
+
+        `uvm_info( get_type_name(),$sformatf("TOTAL READS  : %0d",total_reads),UVM_NONE);
+
+        `uvm_info( get_type_name(), $sformatf( "PASS COUNT   : %0d", pass_count),UVM_NONE);
+
+        `uvm_info(get_type_name(),$sformatf("FAIL COUNT   : %0d",fail_count),UVM_NONE);
+
+        `uvm_info(get_type_name(),"==============================================",UVM_NONE);
 
     endfunction
 
