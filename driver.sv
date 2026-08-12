@@ -69,12 +69,11 @@ class driver extends uvm_driver #(sequence_item);
         // Obtain Virtual Interface
         //----------------------------------------------------
 
-        if(!uvm_config_db #(virtual fifo_if)::get(
-            this, "",  "my_vif",driv_intf ))
+        if(!uvm_config_db #(virtual fifo_if)::
+           get( this, "",  "my_vif",driv_intf ))
        
           begin
-            `uvm_fatal( get_type_name(),
-                "Failed to get virtual interface" )
+              `uvm_fatal( get_type_name(), "Failed to get virtual interface" )
 
         end
 
@@ -166,8 +165,7 @@ class driver extends uvm_driver #(sequence_item);
         repeat(2)
             @(posedge driv_intf.w_clk);
 
-        `uvm_info( get_type_name(),
-            "Driver Interface Initialized", UVM_LOW  );
+        `uvm_info( get_type_name(), "Driver Interface Initialized", UVM_LOW  );
 
     endtask
 
