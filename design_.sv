@@ -54,11 +54,7 @@ begin
     begin
         for(i = 0; i < BUS_WIDTH; i = i + 1)
         begin
-            sync_reg[i] <=
-            {
-                sync_reg[i][NUM_STAGES-2:0],
-                ASYNC[i]
-            };
+            sync_reg[i] <= { sync_reg[i][NUM_STAGES-2:0], ASYNC[i] };
         end
     end
 end
@@ -76,8 +72,7 @@ generate
     for(j = 0; j < BUS_WIDTH; j = j + 1)
     begin : SYNC_ASSIGN
 
-        assign SYNC[j] =
-               sync_reg[j][NUM_STAGES-1];
+        assign SYNC[j] =  sync_reg[j][NUM_STAGES-1];
 
     end
 endgenerate
